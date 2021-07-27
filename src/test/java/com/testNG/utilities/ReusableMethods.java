@@ -183,9 +183,9 @@ public class ReusableMethods {
     }
 
     // Bir WebElementin yazısını degistirme
-    public void WebElementYazisiDegistirme(WebElement locate){
-    WebElement uyari = Driver.getDriver().findElement(WebElement locate);
+    public void WebElementYazisiDegistirme(WebElement locate, String newText){
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-    js.executeScript("arguments[0].innerText = 'Merhabalar", uyari);
+    String newText1 = "arguments[0].innerText = '" + newText + "'";
+    js.executeScript(newText1, locate);
     }
 }
