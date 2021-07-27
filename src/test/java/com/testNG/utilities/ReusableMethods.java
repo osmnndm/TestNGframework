@@ -182,4 +182,10 @@ public class ReusableMethods {
         }
     }
 
+    // Bir WebElementin yazısını degistirme
+    public void WebElementYazisiDegistirme(WebElement locate){
+    WebElement uyari = Driver.getDriver().findElement(WebElement locate);
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    js.executeScript("arguments[0].innerText = 'Merhabalar", uyari);
+    }
 }
