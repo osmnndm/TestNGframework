@@ -168,4 +168,18 @@ public class ReusableMethods {
         return element;
     }
 
+    //TakeScreenshot
+    public void TakeScreenshot(String name){
+        TakesScreenshot takeScreenshot = (TakesScreenshot) Driver.getDriver();
+        File kaynak = takeScreenshot.getScreenshotAs(OutputType.FILE);
+
+        File goruntu = new File(System.getProperty("user.dir") + name+".png");
+
+        try {
+            FileUtils.copyFile(kaynak,goruntu);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
